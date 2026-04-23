@@ -70,13 +70,13 @@ class CartScreen extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    '${item.quantityInGrams}g',
+                                    '${item.quantity * 100}g',
                                     style: TextStyle(color: Colors.grey[600]),
                                   ),
-                                  if (item.selectedAddons.isNotEmpty) ...[
+                                  if (item.selectedIngredients.isNotEmpty) ...[
                                     const SizedBox(height: 4),
                                     Text(
-                                      '+ ${item.selectedAddons.map((a) => a.name).join(", ")}',
+                                      '+ ${item.selectedIngredients.map((a) => a.name).join(", ")}',
                                       style: const TextStyle(fontSize: 12, color: AppTheme.primaryGreen),
                                     ),
                                   ],
@@ -95,7 +95,7 @@ class CartScreen extends StatelessWidget {
                             IconButton(
                               icon: const Icon(Icons.delete_outline, color: Colors.red),
                               onPressed: () {
-                                cartProvider.removeFromCart(item.id);
+                                cartProvider.removeItem(item.id);
                               },
                             ),
                           ],

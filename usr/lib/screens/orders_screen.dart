@@ -48,7 +48,7 @@ class OrdersScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildOrderList(List<Order> orders, String emptyMessage) {
+  Widget _buildOrderList(List<OrderModel> orders, String emptyMessage) {
     if (orders.isEmpty) {
       return Center(
         child: Column(
@@ -95,7 +95,7 @@ class OrdersScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Row(
                     children: [
-                      Text('${item.quantityInGrams}g x ', style: const TextStyle(color: Colors.grey)),
+                      Text('${item.quantity * 100}g x ', style: const TextStyle(color: Colors.grey)),
                       Expanded(child: Text(item.product.name, style: const TextStyle(fontWeight: FontWeight.w500))),
                       Text('₹${item.totalPrice.toStringAsFixed(0)}'),
                     ],
@@ -142,15 +142,11 @@ class OrdersScreen extends StatelessWidget {
     String text;
 
     switch (status) {
-      case OrderStatus.pending:
+      case OrderStatus.placed:
         color = Colors.orange;
-        text = 'Pending';
+        text = 'Placed';
         break;
-      case OrderStatus.confirmed:
-        color = Colors.blue;
-        text = 'Confirmed';
-        break;
-      case OrderStatus.processing:
+      case OrderStatus.preparing:
         color = Colors.indigo;
         text = 'Preparing';
         break;
