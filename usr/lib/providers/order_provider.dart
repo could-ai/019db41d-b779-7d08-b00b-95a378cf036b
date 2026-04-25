@@ -22,7 +22,7 @@ class OrderProvider with ChangeNotifier {
         id: '1',
         type: 'Home',
         street: '123 Health Street',
-        area: 'Ahmedabad',
+        city: 'Ahmedabad',
         pincode: '380015',
       ), // Mock address
       deliveryFee: 40.0,
