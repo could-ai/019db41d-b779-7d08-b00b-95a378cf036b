@@ -211,9 +211,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       .toList();
                   
                   Provider.of<CartProvider>(context, listen: false).addToCart(
-                    product: product,
-                    quantityInGrams: _quantityInGrams,
-                    selectedAddons: selectedAddonIngredients,
+                    product,
+                    (_quantityInGrams / 100).round(),
+                    selectedAddonIngredients,
                   );
                   
                   ScaffoldMessenger.of(context).showSnackBar(

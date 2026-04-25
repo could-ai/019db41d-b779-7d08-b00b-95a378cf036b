@@ -20,7 +20,7 @@ class OrderProvider with ChangeNotifier {
       createdAt: DateTime.now(),
       deliveryAddress: Address(
         id: '1',
-        label: 'Home',
+        type: 'Home',
         street: '123 Health Street',
         area: 'Ahmedabad',
         pincode: '380015',

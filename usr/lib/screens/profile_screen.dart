@@ -90,7 +90,7 @@ class ProfileScreen extends StatelessWidget {
       leading: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: AppTheme.surfaceColor,
+          color: AppTheme.surface,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(icon, color: AppTheme.primaryGreen),
